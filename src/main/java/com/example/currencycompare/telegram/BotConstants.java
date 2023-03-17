@@ -1,5 +1,6 @@
 package com.example.currencycompare.telegram;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
@@ -19,6 +20,8 @@ public class BotConstants {
     }
     private BotConstants(){}
     public static String getBotToken() {
+        File file = new File("src/main/resources/bot_credentials.txt");
+        System.out.println(file.getAbsolutePath());
         return properties.getProperty("BOT_TOKEN");
     }
 
