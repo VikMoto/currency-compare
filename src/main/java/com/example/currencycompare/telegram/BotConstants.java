@@ -5,7 +5,8 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class BotConstants {
-    private static final String CREDENTIALS_FILE = "src\\main\\resources\\bot_credentials.txt";
+    private static final String CREDENTIALS_FILE = "src/main/resources/bot_credentials.txt";
+//    private static final String CREDENTIALS_FILE = "src\\main\\resources\\bot_credentials.txt";
 //    private static final String CREDENTIALS_FILE = "E:\\Business\\Code\\Projects\\currency-copmpare\\src\\main\\resources\\bot_credentials.txt";
     private static final Properties properties = new Properties();
 
