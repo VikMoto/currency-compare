@@ -1,0 +1,26 @@
+steps:
+  - name: 'gcr.io/cloud-builders/gcloud'
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - |
+        echo "GOOGLE_RUNTIME_VERSION=17" >> ${_SUB_PROJECT_DIR}/.bashrc
+
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args:
+      - 'run'
+      - 'deploy'
+      - 'currency-compare'
+      - '--image'
+      - 'gcr.io/$PROJECT_ID/currency-compare'
+      - '--region'
+      - 'europe-central2'
+
+substitutions:
+  _SUB_PROJECT_DIR: '.'
+  _REGION: 'europe-central2'
+  _IMAGE: 'gcr.io/$PROJECT_ID/currency-compare'
+
+options:
+  logging: 'CLOUD_LOGGING_ONLY'
+  substitutionOption: ALLOW_LOOSE
